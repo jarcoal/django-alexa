@@ -7,9 +7,13 @@ import requests
 import base64
 import pytz
 from datetime import datetime, timedelta
-from urlparse import urlparse
 from OpenSSL import crypto
 from .exceptions import InternalError
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 log = logging.getLogger(__name__)
 
